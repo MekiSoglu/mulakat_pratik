@@ -1,0 +1,184 @@
+employees (id, first_name, last_name, department_id, salary, hire_date, manager_id)
+departments (id, name, location)
+projects (id, name, department_id, budget, start_date)
+employee_projects (employee_id, project_id, role, hours_worked)
+
+
+Her departmandaki çalışan sayısını bul (GROUP BY).
+
+Select Count(e.id) , e.depertman_id From employess e
+Group by (e.depertman_id)
+
+
+
+Her departmanın ortalama maaşını hesapla.
+
+Select AVG(e.salary) , e.depertamna_id From employess e
+Group by e.depertman_id
+
+
+
+
+Her departmanın toplam maaş giderini bul (SUM).
+
+Select Sum(e.salary) , e.depertman_id From employess e
+Group by (e.depertman_id)
+
+
+
+Çalışan sayısı 5'ten fazla olan departmanları listele (HAVING).
+
+Select d.name , count(d.id) From depermans d
+Innerjoin  employess e  on d._id = e.depertmans_id
+Group by(d.name)
+having Count(e.id) > 5
+
+
+
+
+
+
+Ortalama maaşı 8000'den yüksek olan departmanları getir (HAVING).
+
+Select d.name , AVG(e.salary) From depertmans d
+InnerJoin Employess e on e.depertman_id = d.id
+Group By(d.name)
+having AVG(e.salary) > 8000
+
+
+
+
+
+Her yöneticinin (manager_id) kaç çalışanı olduğunu bul.
+
+Select Count(e.id) , e.manager_id From employess
+Group By (e.manager_id)
+
+
+
+
+En çok çalışana sahip ilk 3 departmanı getir.
+
+Select Count(e.id) as calisan , d.name From depertmans
+InnerJoin employess e on e.depertmans_id = d.id
+Group By(d.name)
+Order By(calisan) DESC
+Lımıt 3
+
+
+
+
+Her departmandaki en yüksek maaşı bul.
+
+Select MAX(e.salary) , d.name From Depertman d
+InnerJoin Employess e on e.depertmans_id = d.id
+Group By(d.name)
+
+
+
+
+
+
+Her departmandaki en düşük ve en yüksek maaş arasındaki farkı bul.
+
+Select Max(e.salary), MIN(e.salary) , d.nameFrom depertmans d
+Innerjoin employess e on e.depertmasn_id = d.id
+Group By (d.name)
+
+
+
+
+Hangi yılda kaç çalışan işe alınmış, yıla göre grupla (YEAR + COUNT).
+
+
+Select Count (e.id), Year(e.hire_date) as yil From employess e
+group by YEAR(e.hire_date);
+Order By yil
+
+
+
+
+
+employees ve departments tablolarını JOIN ile birleştirip her çalışanın departman adını göster.
+
+Select e.name , d.name From employess e
+InnerJoin depertmans d on d.id = e.depertmans_id
+
+
+
+
+
+Sadece "Istanbul"da bulunan departmanlardaki çalışanları JOIN kullanarak listele.
+
+Select e.name , d.name From employess e
+ınnerJoin Depertmans d on d.id = e.depertmans_id
+where d.location = "Istanbul"
+
+
+
+Her çalışanın adını, soyadını ve bağlı olduğu departmanın adını getir.
+
+Select e.name ,e.surname, d.name From employess e
+LeftJoin depertmans d on d.id = e.depertmans_id
+
+
+
+
+
+projects tablosunu departments ile JOIN edip her projenin hangi departmana ait olduğunu göster.
+
+select p.name , d.name From depertmans d
+InnerJoin project p on id = p.depertman_id
+
+
+
+Departmanı olmayan (department_id NULL olan) çalışanları bul.
+
+
+Select e.name , d.name From employess e
+ınnerJoin Depertmans d on d.id = e.depertmans_id
+
+
+
+Maaşı, kendi departmanının ortalama maaşından yüksek olan çalışanları bul (subquery ile).
+
+Select e.name , s.salary , AVG(e.salary), d.name From employess e
+InnerJoin Depertmans d on d.id = e.depertmans_id
+group By (d.name)
+Having AVG(e.salary) < e.salary
+
+
+
+En yüksek maaşa sahip çalışanı(ları) bul (subquery ile, MAX kullanarak).
+
+Select e.name From employess
+where e.salary = (Select Max(sum.salary) From employess e )
+
+
+
+
+
+Her departmanda kaç farklı proje yürütüldüğünü bul (departments + projects JOIN + GROUP BY).
+
+Select d.name , p.name , COUNT(p.name) From depertman d
+InnerJoin Project p on p.depertman_id = d.id
+Group By (d.name)
+
+
+
+Bütçesi 100.000'den fazla olan projelerin bağlı olduğu departman adlarını getir.
+
+Select p.name ,d.name From deperrtmans d
+InnerJoin projects p on p.depertman_id = d.id
+wherer p.budget > 100.000
+
+
+Hiç çalışanı olmayan departmanları bul (LEFT JOIN + IS NULL).
+
+Select d.name From depertmans d
+Left Join on employess e on d.id= e.depertmans_id
+where e.id Is NUll
+
+
+
+

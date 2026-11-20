@@ -1,0 +1,143 @@
+employees (id, first_name, last_name, department_id, salary, hire_date, manager_id)
+departments (id, name, location)
+projects (id, name, department_id, budget, start_date)
+employee_projects (employee_id, project_id, role, hours_worked)
+
+
+employees tablosundaki tüm çalışanları listele.
+
+Select * From employess ;
+
+
+Sadece first_name ve salary kolonlarını getir.
+
+Select s.first_name , s.salary From employess e;
+
+
+
+
+Maaşı 10.000'den fazla olan çalışanları listele.
+
+Select * From employess e
+Where e.salary > 10.000;
+
+
+Çalışanları maaşa göre azalan sırada sırala.
+
+Select * From employess e
+Order By (e) DESC
+
+
+
+department_id değeri 3 olan çalışanları getir.
+
+Select * From employess e
+where e.depertman_id = 3;
+
+
+
+
+İsmi "A" harfi ile başlayan çalışanları bul.
+
+Select * From employess
+Where e.name LIKE 'A%'
+
+
+Maaşı 5000 ile 15000 arasında olan çalışanları listele.
+
+Select * From Employess e
+Where BETWEEN 5000 AND 15000
+
+
+manager_id boş (NULL) olan çalışanları bul (yöneticisi olmayanlar).
+
+Select * From employess e
+where e.menager_id Is null;
+
+
+
+Çalışanları işe giriş tarihine göre eskiden yeniye sırala.
+
+
+Select * Form employess e
+ORDER BY (e.hire_date) ESC
+
+
+
+departments tablosundaki tüm departman isimlerini tekrarsız (DISTINCT) getir.
+
+Select Dıstınc(d.name) From Depertman d;
+
+
+
+Soyadı "oglu" ile biten çalışanları bul.
+
+Select * From employess e
+where e.name LIKE '%oglu%';
+
+
+
+
+
+location alanı "Istanbul" olan departmanları getir.
+
+Select d.location From depertmans d
+where d.location = "Istanbul";
+
+
+
+Maaşı en yüksek olan 5 çalışanı getir (LIMIT kullan).
+
+Select * From employess e
+Order By (e.salary) DESC
+Lımıt 5;
+
+
+
+employees tablosunda toplam kaç kayıt olduğunu say (COUNT).
+
+Select Count(e.id) From employess e;
+
+
+
+Tüm çalışanların ortalama maaşını hesapla (AVG).
+
+Selecet AVG(e.salary) From employess e;
+
+
+
+
+En yüksek ve en düşük maaşı bul (MAX, MIN).
+
+Select MAX(e.salary) , MIN(e.salary) From employess e;
+
+
+
+department_id 2 veya 4 olan çalışanları getir (IN kullan).
+
+Select * From employess e
+where e.depertman_id IN(2,4);
+
+
+
+
+Çalışan adını ve soyadını birleştirip tek kolon olarak göster (CONCAT).
+
+Select Contcat(e.name , '' , e.surname) as fulname from Employess e;
+
+
+
+2023 yılında işe başlayan çalışanları listele.
+
+Select * From employess e
+where e.hire_date = 2023
+
+
+
+
+
+projects tablosunda bütçesi 50.000'den büyük olan projeleri getir.
+
+Select * From projects p
+where p.budget > 50.000
+

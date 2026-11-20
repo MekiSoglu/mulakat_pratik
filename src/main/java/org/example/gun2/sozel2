@@ -1,0 +1,22 @@
+Java – equals() ve hashCode() metotlarını override etmek neden önemlidir?
+Bunları override etmezsen HashMap/HashSet içinde ne gibi sorunlar yaşarsın?
+
+
+javada has yapıları arkada hasmap kullanır . hascode hash map de hangi bucked a gideceğini bildirir
+ancak bu bucked larda farklı 2 değer aynı hascode verebilir bu durumda aynı bucced içinde bağlı liste oluşturulur
+bu bağlı listeler içinde doğru değeri bulmak için eaquls ile bakmak gerekir . buna dayana bir has sözleşmesi vardır
+eğer iki farklı değerin has değerleri aynı ise eaquls değerleri farkı olmak zorundadır , eğer iki değerin eaquls ile aynı
+ise has değerleride aynı olmak zorundadır .
+bu sözeleşmeden doalyı hem eaquls hemde hascode metotları overide edilmelidir tutarsızlıkları önlemek için .
+
+
+Java – final, finally, finalize arasındaki fark nedir? Her birini kısaca açıkla.
+
+final : bir nesneyi imutable yapar içeriği değişebilir ama referans adresi değiştirilemez . bu özelikle constructor ınjection
+da kullanır ınject edilene nesenenin referansının değiştirlmesini önler .
+
+finnaly : try catch bloklarından sonra sonuç ne olursa olsun çalışacak bloktur . burada genelerde açık kaynaklar kapatılır
+javanın yeni versiyonları ile bu ihtiyaç kalkmıştır try catch sonrası java bunu otomatik yapar.
+
+
+finalize: 

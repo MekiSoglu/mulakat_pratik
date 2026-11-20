@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="34ea7b2c-ff4a-4499-bd9e-207130d5a8d6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gun1/sqlgun1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gun1/sözel.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gun2/sozel2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gun2/sozel2.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gun2/sqlgun2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gun3/gun3s.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gun3/sqlgun3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gun4/gun4s.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gun5/RateLimit/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gun5/RateLimit/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gun5/RateLimit/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gun5/RateLimit/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gun5/RateLimit/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gun5/RateLimit/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gun5/RateLimit/src/main/java/com/example/RateLimit/RateLimitApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gun5/RateLimit/src/main/java/com/example/RateLimit/RateLimitService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gun5/RateLimit/src/main/java/com/example/RateLimit/TokenBucked.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gun5/RateLimit/src/main/java/com/example/RateLimit/TransferRateLimitFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gun5/RateLimit/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gun5/RateLimit/src/test/java/com/example/RateLimit/RateLimitApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gun6/basic_creat/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gun6/basic_creat/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gun6/basic_creat/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gun6/basic_creat/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gun6/basic_creat/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gun6/basic_creat/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gun6/basic_creat/src/main/java/com/example/basic_creat/BasicCreatApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gun6/basic_creat/src/main/java/com/example/basic_creat/Controller/CustomerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gun6/basic_creat/src/main/java/com/example/basic_creat/DTO/CustomerResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gun6/basic_creat/src/main/java/com/example/basic_creat/DTO/CustomerUpdateDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gun6/basic_creat/src/main/java/com/example/basic_creat/Entity/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gun6/basic_creat/src/main/java/com/example/basic_creat/Exception/CustomerNotFountException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gun6/basic_creat/src/main/java/com/example/basic_creat/Exception/ErrorResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gun6/basic_creat/src/main/java/com/example/basic_creat/Exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gun6/basic_creat/src/main/java/com/example/basic_creat/Repository/CustomerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gun6/basic_creat/src/main/java/com/example/basic_creat/Service/AccountService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gun6/basic_creat/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gun6/basic_creat/src/test/java/com/example/basic_creat/BasicCreatApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gun7/gun7.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gun7/gun7s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gun8/gun8.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="3IPvCw4f1YEUeS8ozSyTgwaHsiT" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/meki/Desktop/mülakat_pratik",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/org/example/gun6" />
+      <recent name="$PROJECT_DIR$/src/main/java/org/example/gun5" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="mülakat_pratik" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="mülakat_pratik" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="34ea7b2c-ff4a-4499-bd9e-207130d5a8d6" name="Changes" comment="" />
+      <created>1787678895488</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1787678895488</updated>
+      <workItem from="1787678899023" duration="101134000" />
+      <workItem from="1789125460818" duration="7538000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

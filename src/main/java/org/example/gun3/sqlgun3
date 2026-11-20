@@ -1,0 +1,161 @@
+employees (id, first_name, last_name, department_id, salary, hire_date, manager_id)
+departments (id, name, location)
+projects (id, name, department_id, budget, start_date)
+employee_projects (employee_id, project_id, role, hours_worked)
+
+
+
+Maaşı, kendi departmanının ortalama maaşından yüksek olan çalışanları listele (correlated subquery ile).
+
+Select e.name , AVG(e.salary) , e.salary ,e.depertman_id From employess e
+Group By e.depertman_id
+having AVG(e.sum) > e.sum;
+
+En yüksek maaşa sahip çalışanı(ları) bul (subquery + MAX ile, doğru karşılaştırmaya dikkat).
+
+Select e.name , e.salary From employess e
+where salary = (
+    Select Max (sum.salary) From employess sum
+)
+
+
+
+Hiçbir projede çalışmamış çalışanları bul (employee_projects ile NOT IN / NOT EXISTS).
+
+Select e.name From employess e
+LeftJoin employee_project ep on ep.empploye_id = e.id
+where ep.employee_id Is NULL ;
+
+Select e.name From employess e
+where Not Exsist (
+   Select 1 From employee_project ep
+   where ep.employee_id = e.id
+)
+
+
+
+En az bir projede "Manager" rolünde çalışmış kişileri bul.
+
+Select Dıstınc e.name , ep.role From employess e
+InnerJoin employee_project ep on ep.employee_id = e.id
+where ep.role = "manager"
+
+
+
+Şirketin genel ortalama maaşından düşük maaş alan çalışanları listele (subquery ile).
+
+Select e.name , e.salary From employees e
+where e.salary < (
+ Select AVG(sum.salary) From employess sum
+)
+
+
+
+
+
+
+Her çalışanın, kendi yöneticisinin adını da yanında göster (self JOIN).
+
+Select e.name , m.name From employees e
+InnerJoin employess m on m.id = e.manager_id;
+
+
+
+
+Yöneticisi olmayan (yani kendisi üst düzey olan) çalışanları self JOIN kullanmadan bul.
+
+Select * From employess e
+where e.manager_id Is NUll
+
+Bir projede en çok saat çalışan (hours_worked) ilk 3 kişiyi bul.
+
+Select ep.employee_id , ep.hours_worked From  employee_project ep
+Order By ep.hours_worked DESC
+LIMIT 3;
+
+
+
+Her projenin toplam çalışılan saatini (SUM(hours_worked)) bul.
+
+select Sum(ep.hours_worked) ,ep.project_id from employee_project ep
+Group By  ep.project_id
+
+
+
+
+Bütçesi departmanındaki diğer projelerin ortalamasından yüksek olan projeleri bul (correlated subquery).
+
+Select p.name From projects p
+Group By p.depertman_id
+having AVG(p.budget) < p.budget;
+
+
+Her departmanda en yüksek maaşı alan çalışanı(ları) bul (subquery ile, GROUP BY kullanmadan).
+
+Select e.name , e.salary From employess e
+where e.depertman_id IS NOT NULL (
+   Select MAX(sum.salary) From employess sum where e.depertman_id = sum.depertman_id
+ )
+
+
+
+
+
+ 3'ten fazla projede yer almış çalışanları bul (employee_projects + GROUP BY + HAVING).
+
+ Select Count(ep.employee_id) , ep.emoloyee_id From employee_project ep
+ Group By employee_id
+ Having Count(ep.employe_id)>3;
+
+
+ Aynı departmanda çalışan ve maaşları birbirine eşit olan çalışan çiftlerini bul (self JOIN).
+
+ Select e.name , e.salary ,e2.name,2.salary From employee e
+ InnerJoin employee e2 on e2.depertman_id = e.depertman_id
+ AND e.salary = e2.salary AND e.id < e2.id;
+
+
+ Hem "Developer" hem "Tester" rolünde çalışmış olan kişileri bul.
+
+ Select e.name From emloyee e
+ ınnerJoin employe_project ep1 on ep.employee_id = e.id AND ep1.role = "TESTER"
+ InnerJoin employee_project ep2 on ep2.emoloyee_id = e.id AND ep2.role = "DEVELOPER"
+ Group By e.name
+
+ Select e.name From employees e
+ ınner Join Emoloyee_project ep on ep.employee_id = e.id
+ Where ep.role IN ("Develeloper , Tester")
+ Group BY e.name
+ Having Count (DISTINC (ep.role)) = 2;
+
+
+
+
+
+ Her çalışanın maaşının, departman ortalamasına göre kaç birim fazla/eksik olduğunu göster
+ (subquery ile fark hesabı).
+
+
+ Select e.salary , e.name ,
+ (Select AVG(e.salary) from employess e1 where e.depertman_id = e1.depertman_id) AS depertman_ortalama
+ e.salary - (Select AVG(e.salary) From employess e1 e1.depertman_id = e.depertman_id) as maaş_farkı
+ From employess e;
+
+
+
+
+ employee_projects tablosunda hiç kaydı olmayan projeleri bul (LEFT JOIN + IS NULL).
+
+ Select p.name From projects p
+ Left Join employee_project ep on ep.project_id = p.id
+ where p.id IS NULL;
+
+
+ Departman bazında en yüksek 2. maaşı bul (subquery veya window function ile — ikisini de deneyebilirsin).
+
+
+
+
+
+
+
